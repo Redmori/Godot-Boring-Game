@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkkamipwh38sb"]
+
+[ext_resource type="Texture2D" uid="uid://bpummg0kfo2yf" path="res://Sprites/Drill.png" id="1_6n4sp"]
+[ext_resource type="PackedScene" uid="uid://djw8mshd6i4bc" path="res://Scenes/building_spot.tscn" id="2_paea0"]
+[ext_resource type="PackedScene" uid="uid://b1y12tt801gv2" path="res://Scenes/drill_head.tscn" id="3_j7vxu"]
+[ext_resource type="PackedScene" uid="uid://cvfcuf02qh1y3" path="res://Scenes/blockage.tscn" id="4_fslhg"]
+[ext_resource type="PackedScene" uid="uid://1uu72m32w0tn" path="res://Scenes/inventory.tscn" id="5_aetqr"]
+
+[node name="Drill" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(25, 0)
+texture = ExtResource("1_6n4sp")
+
+[node name="stack_point" type="Marker2D" parent="."]
+position = Vector2(0, -50)
+
+[node name="BuildingSpot" parent="stack_point" instance=ExtResource("2_paea0")]
+
+[node name="DrillHead" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("3_j7vxu")]
+position = Vector2(50, 0)
+inventory = NodePath("../Inventory")
+mining_speed = null
+
+[node name="Blockage" parent="." instance=ExtResource("4_fslhg")]
+
+[node name="Inventory" parent="." instance=ExtResource("5_aetqr")]
+
+[node name="BuildingSpot" parent="." instance=ExtResource("2_paea0")]
+position = Vector2(-50, 0)
+spot_type = 5

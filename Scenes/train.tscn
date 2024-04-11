@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7qjvyfveoyys"]
+
+[ext_resource type="Script" path="res://Scripts/train.gd" id="1_xtxxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufti4"]
+
+[node name="Train" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_xtxxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(40, 0)
+shape = SubResource("RectangleShape2D_ufti4")
+debug_color = Color(0.941176, 0.192157, 0.388235, 0.419608)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(50, 0)
+collision_mask = 2

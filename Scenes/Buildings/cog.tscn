@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bluw6jlk1jj5b"]
+
+[ext_resource type="Texture2D" uid="uid://b4to0wpyeube6" path="res://Sprites/Cog.png" id="2_ji4qr"]
+[ext_resource type="PackedScene" uid="uid://djw8mshd6i4bc" path="res://Scenes/building_spot.tscn" id="3_lnard"]
+[ext_resource type="PackedScene" uid="uid://cvfcuf02qh1y3" path="res://Scenes/blockage.tscn" id="4_w6ybw"]
+
+[node name="Cog" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ji4qr")
+
+[node name="ConnectionRight" type="Marker2D" parent="."]
+position = Vector2(50, 0)
+gizmo_extents = 5.0
+
+[node name="spot_axle_right" parent="ConnectionRight" instance=ExtResource("3_lnard")]
+unique_name_in_owner = true
+spot_type = 3
+
+[node name="ConnectionTop" type="Marker2D" parent="."]
+position = Vector2(0, -50)
+gizmo_extents = 5.0
+
+[node name="spot_cog_top" parent="ConnectionTop" instance=ExtResource("3_lnard")]
+unique_name_in_owner = true
+spot_type = 4
+
+[node name="ConnectionBot" type="Marker2D" parent="."]
+position = Vector2(0, 50)
+gizmo_extents = 5.0
+
+[node name="spot_cog_bot" parent="ConnectionBot" instance=ExtResource("3_lnard")]
+unique_name_in_owner = true
+spot_type = 4
+
+[node name="ConnectionLeft" type="Marker2D" parent="."]
+position = Vector2(-50, 0)
+gizmo_extents = 5.0
+
+[node name="spot_axle_left" parent="ConnectionLeft" instance=ExtResource("3_lnard")]
+unique_name_in_owner = true
+spot_type = 3
+
+[node name="Blockage" parent="." instance=ExtResource("4_w6ybw")]

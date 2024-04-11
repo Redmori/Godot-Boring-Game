@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8i08fnha1g8a"]
+
+[ext_resource type="Texture2D" uid="uid://dddee2bkw0cog" path="res://Sprites/Conveyor.png" id="1_b4qe3"]
+[ext_resource type="Script" path="res://Scripts/conveyor.gd" id="1_pjhsg"]
+[ext_resource type="PackedScene" uid="uid://djw8mshd6i4bc" path="res://Scenes/building_spot.tscn" id="2_eabps"]
+[ext_resource type="PackedScene" uid="uid://cvfcuf02qh1y3" path="res://Scenes/blockage.tscn" id="3_7m1qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gd1sn"]
+size = Vector2(10, 10)
+
+[node name="Conveyor" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_pjhsg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b4qe3")
+
+[node name="ConnectionRight" type="Marker2D" parent="."]
+position = Vector2(50, 0)
+gizmo_extents = 5.0
+
+[node name="spot_axle_right" parent="ConnectionRight" instance=ExtResource("2_eabps")]
+unique_name_in_owner = true
+spot_type = 5
+
+[node name="ConnectionLeft" type="Marker2D" parent="."]
+position = Vector2(-50, 0)
+gizmo_extents = 5.0
+
+[node name="spot_axle_left" parent="ConnectionLeft" instance=ExtResource("2_eabps")]
+unique_name_in_owner = true
+spot_type = 5
+
+[node name="Blockage" parent="." instance=ExtResource("3_7m1qf")]
+
+[node name="pickup_box" type="CollisionShape2D" parent="."]
+position = Vector2(25, 0)
+shape = SubResource("RectangleShape2D_gd1sn")
+debug_color = Color(0.92549, 0.203922, 0.454902, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

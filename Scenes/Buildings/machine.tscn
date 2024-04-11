@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbi1xlf8eoyop"]
+
+[ext_resource type="Texture2D" uid="uid://8854eaja5iko" path="res://Sprites/Furnace.png" id="1_72d74"]
+[ext_resource type="PackedScene" uid="uid://djw8mshd6i4bc" path="res://Scenes/building_spot.tscn" id="3_gaw8g"]
+[ext_resource type="PackedScene" uid="uid://cvfcuf02qh1y3" path="res://Scenes/blockage.tscn" id="3_ly8py"]
+
+[node name="Machine" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_72d74")
+
+[node name="stack_point" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -50)
+
+[node name="BuildingSpot" parent="stack_point" instance=ExtResource("3_gaw8g")]
+
+[node name="Blockage" parent="." instance=ExtResource("3_ly8py")]

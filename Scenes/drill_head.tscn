@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1y12tt801gv2"]
+
+[ext_resource type="Script" path="res://Scripts/drill_head.gd" id="1_seebe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okgls"]
+size = Vector2(54, 20)
+
+[node name="DrillHead" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_seebe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_okgls")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-25, 0)
+target_position = Vector2(49, 0)
+collision_mask = 2
+collide_with_areas = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

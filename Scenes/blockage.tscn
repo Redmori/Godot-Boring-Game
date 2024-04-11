@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvfcuf02qh1y3"]
+
+[ext_resource type="Script" path="res://Scenes/blockage.gd" id="1_2ldun"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8eod"]
+size = Vector2(38, 40)
+
+[node name="Blockage" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_2ldun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p8eod")
+debug_color = Color(0.839216, 0.380392, 0.156863, 0.419608)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

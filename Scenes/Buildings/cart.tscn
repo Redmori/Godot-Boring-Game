@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://gf85g7das527"]
+
+[ext_resource type="Texture2D" uid="uid://0amk8gatvwnx" path="res://Sprites/Cart.png" id="1_sf266"]
+[ext_resource type="PackedScene" uid="uid://djw8mshd6i4bc" path="res://Scenes/building_spot.tscn" id="3_0e04r"]
+[ext_resource type="PackedScene" uid="uid://cvfcuf02qh1y3" path="res://Scenes/blockage.tscn" id="4_uvv1w"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_p65aw"]
+a = Vector2(-50, 0)
+b = Vector2(50, 0)
+
+[node name="Cart" type="RigidBody2D"]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sf266")
+
+[node name="connection_point" type="Marker2D" parent="."]
+position = Vector2(-100, 0)
+
+[node name="spot_cart" parent="connection_point" instance=ExtResource("3_0e04r")]
+unique_name_in_owner = true
+spot_type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("SegmentShape2D_p65aw")
+one_way_collision = true
+
+[node name="stack_point_1" type="Marker2D" parent="."]
+position = Vector2(25, -50)
+
+[node name="spot_machine_1" parent="stack_point_1" instance=ExtResource("3_0e04r")]
+unique_name_in_owner = true
+
+[node name="stack_point_2" type="Marker2D" parent="."]
+position = Vector2(-25, -50)
+
+[node name="spot_machine_2" parent="stack_point_2" instance=ExtResource("3_0e04r")]
+unique_name_in_owner = true
+
+[node name="Blockage" parent="." instance=ExtResource("4_uvv1w")]
+scale = Vector2(2, 1)

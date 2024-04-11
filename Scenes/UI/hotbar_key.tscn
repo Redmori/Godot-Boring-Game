@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqe6no2e01be0"]
+
+[ext_resource type="Texture2D" uid="uid://ckmf4w1uxmj1n" path="res://Sprites/icon.svg" id="1_apirg"]
+[ext_resource type="Script" path="res://Scripts/hotbar_key.gd" id="1_pacwr"]
+[ext_resource type="ButtonGroup" uid="uid://cy7f520qj1gr8" path="res://hotbar_button_group.tres" id="3_2e446"]
+
+[node name="Hotbar Key" type="MarginContainer"]
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_pacwr")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_apirg")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+
+[node name="KeyLabel" type="Label" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 26
+text = "1"
+
+[node name="Button" type="Button" parent="PanelContainer"]
+layout_mode = 2
+toggle_mode = true
+keep_pressed_outside = true
+button_group = ExtResource("3_2e446")
+
+[connection signal="pressed" from="PanelContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://1uu72m32w0tn"]
+
+[ext_resource type="Script" path="res://Scripts/inventory.gd" id="1_5ipw1"]
+[ext_resource type="PackedScene" uid="uid://c1tvcodmirvaa" path="res://Scenes/item_object.tscn" id="2_h118x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c38ve"]
+size = Vector2(10, 10)
+
+[node name="Inventory" type="Node2D" node_paths=PackedStringArray("drop_off_point")]
+script = ExtResource("1_5ipw1")
+item_scene = ExtResource("2_h118x")
+drop_off_point = NodePath("drop_off")
+
+[node name="drop_off" type="Area2D" parent="."]
+position = Vector2(-25, 0)
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drop_off"]
+shape = SubResource("RectangleShape2D_c38ve")
+
+[connection signal="body_exited" from="drop_off" to="." method="_on_drop_off_body_exited"]

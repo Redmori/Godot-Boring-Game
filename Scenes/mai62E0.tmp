@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://dj70kjt8dsnlo"]
+
+[ext_resource type="PackedScene" uid="uid://dvujf5rbj07y0" path="res://Scenes/tile_generator.tscn" id="1_gkxso"]
+[ext_resource type="PackedScene" uid="uid://c7qjvyfveoyys" path="res://Scenes/train.tscn" id="2_o0mj3"]
+[ext_resource type="PackedScene" uid="uid://gf85g7das527" path="res://Scenes/Buildings/cart.tscn" id="3_ow520"]
+[ext_resource type="PackedScene" uid="uid://nbgiv5yrh41s" path="res://Scenes/player.tscn" id="4_1taqi"]
+[ext_resource type="Script" path="res://Scripts/block_culler.gd" id="5_dmq1s"]
+[ext_resource type="PackedScene" uid="uid://c8i08fnha1g8a" path="res://Scenes/Buildings/conveyor.tscn" id="6_ee5lv"]
+[ext_resource type="PackedScene" uid="uid://c1tvcodmirvaa" path="res://Scenes/item_object.tscn" id="7_ue04l"]
+[ext_resource type="PackedScene" uid="uid://dqk12l3nv5f5x" path="res://Scenes/tile_map.tscn" id="8_b8e5w"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j6ibk"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_m2ury"]
+
+[node name="Main Scene" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(513, 600)
+shape = SubResource("WorldBoundaryShape2D_j6ibk")
+
+[node name="Train" parent="." instance=ExtResource("2_o0mj3")]
+position = Vector2(700, 575)
+
+[node name="Cart" parent="Train" instance=ExtResource("3_ow520")]
+
+[node name="player" parent="Train" node_paths=PackedStringArray("floor") instance=ExtResource("4_1taqi")]
+position = Vector2(-211, -235)
+floor = NodePath("../../Floor")
+
+[node name="Camera2D" type="Camera2D" parent="Train/player"]
+
+[node name="BlockCuller" type="Area2D" parent="Train/player"]
+visible = false
+position = Vector2(-500, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_dmq1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Train/player/BlockCuller"]
+visible = false
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_m2ury")
+
+[node name="Conveyor" parent="." instance=ExtResource("6_ee5lv")]
+position = Vector2(573, 469)
+
+[node name="Node2D" parent="." instance=ExtResource("7_ue04l")]
+position = Vector2(655, 464)
+
+[node name="Conveyor2" parent="." instance=ExtResource("6_ee5lv")]
+position = Vector2(622, 471)
+
+[node name="ItemObject" parent="." instance=ExtResource("7_ue04l")]
+position = Vector2(640, 465)
+
+[node name="ItemObject2" parent="." instance=ExtResource("7_ue04l")]
+position = Vector2(590, 462)
+
+[node name="ItemObject3" parent="." instance=ExtResource("7_ue04l")]
+position = Vector2(606, 473)
+
+[node name="TileGenerator" parent="." node_paths=PackedStringArray("tracker") instance=ExtResource("1_gkxso")]
+visible = false
+tracker = NodePath("../Train/player")
+
+[node name="TileMap" parent="." instance=ExtResource("8_b8e5w")]
+position = Vector2(2, 600)
+
+[connection signal="body_entered" from="Train/player/BlockCuller" to="Train/player/BlockCuller" method="_on_body_entered"]
