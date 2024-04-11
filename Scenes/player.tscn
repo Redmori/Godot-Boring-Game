@@ -1,9 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://nbgiv5yrh41s"]
+[gd_scene load_steps=15 format=3 uid="uid://nbgiv5yrh41s"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_as5aw"]
 [ext_resource type="Texture2D" uid="uid://ckmf4w1uxmj1n" path="res://Sprites/icon.svg" id="2_5m0vo"]
 [ext_resource type="Script" path="res://Scripts/building.gd" id="3_7htir"]
-[ext_resource type="ButtonGroup" uid="uid://cy7f520qj1gr8" path="res://hotbar_button_group.tres" id="4_etfcw"]
+[ext_resource type="Resource" uid="uid://di86dycolsgrc" path="res://Resources/Items/cart_resource.tres" id="4_6jhsk"]
+[ext_resource type="ButtonGroup" uid="uid://cy7f520qj1gr8" path="res://Resources/hotbar_button_group.tres" id="4_jhwua"]
+[ext_resource type="Resource" uid="uid://b0vhh7rgdsl1g" path="res://Resources/Items/machine_resource.tres" id="5_e782c"]
+[ext_resource type="Resource" uid="uid://dd7241lagikjr" path="res://Resources/Items/drill_resource.tres" id="6_dm8av"]
+[ext_resource type="Resource" uid="uid://bqiakegl05qgk" path="res://Resources/Items/axle_resource.tres" id="7_kl5og"]
+[ext_resource type="Resource" uid="uid://cgango57hnn8d" path="res://Resources/Items/motor_resource.tres" id="8_js37j"]
+[ext_resource type="Resource" uid="uid://sxd8d0pbc8hx" path="res://Resources/Items/cog_resource.tres" id="9_bij7e"]
+[ext_resource type="Resource" uid="uid://cakfer36kj7rx" path="res://Resources/Items/bore_resource.tres" id="10_u8m2x"]
+[ext_resource type="Resource" uid="uid://bhsjoj00kd6kb" path="res://Resources/Items/conveyor_resource.tres" id="11_6w3j7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvsoo"]
 size = Vector2(50, 77)
@@ -25,7 +33,8 @@ shape = SubResource("RectangleShape2D_xvsoo")
 
 [node name="BuildingRange" type="Area2D" parent="."]
 script = ExtResource("3_7htir")
-hotbar = ExtResource("4_etfcw")
+inventory = Array[Resource("res://Resources/item.gd")]([ExtResource("4_6jhsk"), ExtResource("5_e782c"), ExtResource("6_dm8av"), ExtResource("7_kl5og"), ExtResource("8_js37j"), ExtResource("9_bij7e"), ExtResource("10_u8m2x"), ExtResource("11_6w3j7")])
+hotbar = ExtResource("4_jhwua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuildingRange"]
 shape = SubResource("CircleShape2D_hdjce")

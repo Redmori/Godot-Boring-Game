@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://sxd8d0pbc8hx"]
+
+[ext_resource type="Script" path="res://Resources/item.gd" id="1_falu8"]
+[ext_resource type="Texture2D" uid="uid://b4to0wpyeube6" path="res://Sprites/Cog.png" id="1_k3s2s"]
+
+[resource]
+script = ExtResource("1_falu8")
+name = "Cog"
+amount = 1
+building_mode = Array[int]([3, 4])
+scene = "res://Scenes/Buildings/cog.tscn"
+icon = ExtResource("1_k3s2s")

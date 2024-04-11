@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dd7241lagikjr"]
+
+[ext_resource type="Texture2D" uid="uid://bpummg0kfo2yf" path="res://Sprites/Drill.png" id="1_s6rlj"]
+[ext_resource type="Script" path="res://Resources/item.gd" id="1_x3oqs"]
+
+[resource]
+script = ExtResource("1_x3oqs")
+name = "Drill"
+amount = 1
+building_mode = Array[int]([2])
+scene = "res://Scenes/Buildings/drill.tscn"
+icon = ExtResource("1_s6rlj")

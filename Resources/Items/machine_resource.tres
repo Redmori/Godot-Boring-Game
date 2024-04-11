@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b0vhh7rgdsl1g"]
+
+[ext_resource type="Texture2D" uid="uid://8854eaja5iko" path="res://Sprites/Furnace.png" id="1_qksxk"]
+[ext_resource type="Script" path="res://Resources/item.gd" id="1_rbf4d"]
+
+[resource]
+script = ExtResource("1_rbf4d")
+name = "Machine"
+amount = 1
+building_mode = Array[int]([2])
+scene = "res://Scenes/Buildings/machine.tscn"
+icon = ExtResource("1_qksxk")

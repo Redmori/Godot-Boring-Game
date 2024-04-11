@@ -69,30 +69,39 @@ grow_vertical = 0
 layout_mode = 2
 
 [node name="Hotbar Key" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [node name="Hotbar Key2" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [node name="Hotbar Key3" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [node name="Hotbar Key4" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [node name="Hotbar Key5" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [node name="Hotbar Key6" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [node name="Hotbar Key7" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [node name="Hotbar Key8" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [node name="Hotbar Key9" parent="UI/Hotbar/Hotbar split" instance=ExtResource("7_nurg7")]
+visible = false
 layout_mode = 2
 
 [connection signal="body_entered" from="player/BlockCuller" to="player/BlockCuller" method="_on_body_entered"]

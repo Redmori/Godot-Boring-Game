@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ckmf4w1uxmj1n" path="res://Sprites/icon.svg" id="1_apirg"]
 [ext_resource type="Script" path="res://Scripts/hotbar_key.gd" id="1_pacwr"]
-[ext_resource type="ButtonGroup" uid="uid://cy7f520qj1gr8" path="res://hotbar_button_group.tres" id="3_2e446"]
+[ext_resource type="ButtonGroup" uid="uid://cy7f520qj1gr8" path="res://Resources/hotbar_button_group.tres" id="3_ioj0w"]
 
 [node name="Hotbar Key" type="MarginContainer"]
 theme_override_constants/margin_left = 5
@@ -37,6 +37,6 @@ text = "1"
 layout_mode = 2
 toggle_mode = true
 keep_pressed_outside = true
-button_group = ExtResource("3_2e446")
+button_group = ExtResource("3_ioj0w")
 
 [connection signal="pressed" from="PanelContainer/Button" to="." method="_on_button_pressed"]

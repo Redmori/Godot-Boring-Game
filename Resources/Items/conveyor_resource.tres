@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bhsjoj00kd6kb"]
+
+[ext_resource type="Texture2D" uid="uid://dddee2bkw0cog" path="res://Sprites/Conveyor.png" id="1_k66aw"]
+[ext_resource type="Script" path="res://Resources/item.gd" id="1_rveia"]
+
+[resource]
+script = ExtResource("1_rveia")
+name = "Conveyor"
+amount = 1
+building_mode = Array[int]([5])
+scene = "res://Scenes/Buildings/conveyor.tscn"
+icon = ExtResource("1_k66aw")
