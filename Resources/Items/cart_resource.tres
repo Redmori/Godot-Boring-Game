@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://di86dycolsgrc"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://di86dycolsgrc"]
 
 [ext_resource type="Texture2D" uid="uid://0amk8gatvwnx" path="res://Sprites/Cart.png" id="1_oexuc"]
 [ext_resource type="Script" path="res://Resources/item.gd" id="1_qdxpy"]
+[ext_resource type="PackedScene" uid="uid://gf85g7das527" path="res://Scenes/Buildings/cart.tscn" id="2_fu2gm"]
 
 [resource]
 script = ExtResource("1_qdxpy")
 name = "Cart"
 amount = 1
 building_mode = Array[int]([1])
-scene = "res://Scenes/Buildings/cart.tscn"
+scene = ExtResource("2_fu2gm")
 icon = ExtResource("1_oexuc")

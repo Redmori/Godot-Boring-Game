@@ -32,6 +32,7 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_xvsoo")
 
 [node name="BuildingRange" type="Area2D" parent="."]
+z_index = 1
 script = ExtResource("3_7htir")
 inventory = Array[Resource("res://Resources/item.gd")]([ExtResource("4_6jhsk"), ExtResource("5_e782c"), ExtResource("6_dm8av"), ExtResource("7_kl5og"), ExtResource("8_js37j"), ExtResource("9_bij7e"), ExtResource("10_u8m2x"), ExtResource("11_6w3j7")])
 hotbar = ExtResource("4_jhwua")

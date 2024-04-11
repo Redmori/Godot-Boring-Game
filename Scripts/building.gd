@@ -57,14 +57,16 @@ func change_building_mode(mode):
 		area_check(area)
 
 func build_on_spot(bs, building):
-	var new_machine = load(building).instantiate()
+	var new_machine = building.instantiate()
 	bs.add_child(new_machine)
 	_on_area_exited(bs)
 	bs.occupy()
-	if building == "res://Scenes/Buildings/drill.tscn":
+	if new_machine.name == "Drill" or new_machine.name == "Bore":
 		train.add_drill(new_machine)
-	if building == "res://Scenes/Buildings/bore.tscn":
-		train.add_drill(new_machine)
+	#if building == "res://Scenes/Buildings/drill.tscn":
+		#train.add_drill(new_machine)
+	#if building == "res://Scenes/Buildings/bore.tscn":
+		#train.add_drill(new_machine)
 
 
 func _on_area_entered(area : Area2D):

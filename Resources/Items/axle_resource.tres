@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bqiakegl05qgk"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bqiakegl05qgk"]
 
 [ext_resource type="Texture2D" uid="uid://by8syun4yj7uc" path="res://Sprites/Axle.png" id="1_t4dlv"]
 [ext_resource type="Script" path="res://Resources/item.gd" id="1_wg2ei"]
+[ext_resource type="PackedScene" uid="uid://nv37uwe2lpun" path="res://Scenes/Buildings/axle.tscn" id="2_5y8br"]
 
 [resource]
 script = ExtResource("1_wg2ei")
 name = "Axle"
 amount = 1
 building_mode = Array[int]([3])
-scene = "res://Scenes/Buildings/axle.tscn"
+scene = ExtResource("2_5y8br")
 icon = ExtResource("1_t4dlv")
