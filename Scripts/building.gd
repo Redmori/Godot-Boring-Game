@@ -15,7 +15,6 @@ func _ready():
 		var button = hotbar.get_buttons()[index]
 		button.pressed.connect(func(): hotbar_pressed(index))
 		button.get_parent().get_node("MarginContainer").get_node("KeyLabel").set_text(str(index+1))
-		print(index, " / " , inventory.size())
 		if index <= inventory.size()-1:
 			button.get_parent().get_node("TextureRect").texture = inventory[index].icon
 			button.get_parent().get_parent().visible = true

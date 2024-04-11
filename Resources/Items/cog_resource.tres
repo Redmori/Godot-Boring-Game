@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://sxd8d0pbc8hx"]
 
-[ext_resource type="Script" path="res://Resources/item.gd" id="1_falu8"]
+[ext_resource type="Script" path="res://Resources/Items/item.gd" id="1_falu8"]
 [ext_resource type="Texture2D" uid="uid://b4to0wpyeube6" path="res://Sprites/Cog.png" id="1_k3s2s"]
 [ext_resource type="PackedScene" uid="uid://bluw6jlk1jj5b" path="res://Scenes/Buildings/cog.tscn" id="2_1l7lv"]
 

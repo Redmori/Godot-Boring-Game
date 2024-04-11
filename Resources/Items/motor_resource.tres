@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cgango57hnn8d"]
 
-[ext_resource type="Script" path="res://Resources/item.gd" id="1_54uyp"]
+[ext_resource type="Script" path="res://Resources/Items/item.gd" id="1_54uyp"]
 [ext_resource type="Texture2D" uid="uid://6tc7v3unvpng" path="res://Sprites/Motor.png" id="1_ct0h0"]
 [ext_resource type="PackedScene" uid="uid://c6ic7wiyl1wrt" path="res://Scenes/Buildings/motor.tscn" id="2_13xl4"]
 

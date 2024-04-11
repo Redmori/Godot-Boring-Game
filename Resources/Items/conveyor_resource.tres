@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bhsjoj00kd6kb"]
 
 [ext_resource type="Texture2D" uid="uid://dddee2bkw0cog" path="res://Sprites/Conveyor.png" id="1_k66aw"]
-[ext_resource type="Script" path="res://Resources/item.gd" id="1_rveia"]
+[ext_resource type="Script" path="res://Resources/Items/item.gd" id="1_rveia"]
 [ext_resource type="PackedScene" uid="uid://c8i08fnha1g8a" path="res://Scenes/Buildings/conveyor.tscn" id="2_nsjyd"]
 
 [resource]

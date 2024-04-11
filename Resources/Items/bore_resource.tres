@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cakfer36kj7rx"]
 
 [ext_resource type="Texture2D" uid="uid://btpuh5w4hg8v3" path="res://Sprites/Drillhead.png" id="1_2wyv4"]
-[ext_resource type="Script" path="res://Resources/item.gd" id="1_vwas2"]
+[ext_resource type="Script" path="res://Resources/Items/item.gd" id="1_vwas2"]
 [ext_resource type="PackedScene" uid="uid://c5u5um7ij6pw" path="res://Scenes/Buildings/bore.tscn" id="2_qjf3u"]
 
 [resource]

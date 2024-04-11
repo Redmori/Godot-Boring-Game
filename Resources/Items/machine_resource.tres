@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://b0vhh7rgdsl1g"]
 
 [ext_resource type="Texture2D" uid="uid://8854eaja5iko" path="res://Sprites/Furnace.png" id="1_qksxk"]
-[ext_resource type="Script" path="res://Resources/item.gd" id="1_rbf4d"]
+[ext_resource type="Script" path="res://Resources/Items/item.gd" id="1_rbf4d"]
 [ext_resource type="PackedScene" uid="uid://cbi1xlf8eoyop" path="res://Scenes/Buildings/machine.tscn" id="2_30r82"]
 
 [resource]
