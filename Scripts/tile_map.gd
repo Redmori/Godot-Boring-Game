@@ -7,11 +7,16 @@ extends TileMap
 var old_position
 var old_tile_position
 
+var iron_seed = FastNoiseLite.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	old_position = tracker.global_position[0]
 	old_tile_position = local_to_map(tracker.global_position)[0]
-	print(tracker.global_position, local_to_map(tracker.global_position))
+	#print(tracker.global_position, local_to_map(tracker.global_position))
+	
+	iron_seed.seed = randi()
+	iron_seed.frequency = 0.2
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,9 +33,12 @@ func _process(delta):
 			
 func generate_column(x):
 	for y in range(-1, -height, -1):
-		set_cell(0,Vector2i(x,y),0,Vector2i(randi_range(2,5),0))
-	set_cell(0,Vector2i(x,0),0,Vector2i(1,0))
-	set_cell(0,Vector2i(x,-height),0,Vector2i(1,0))
+		if iron_seed.get_noise_2d(x,y) > 0.1:
+			set_cell(0,Vector2i(x,y),3,Vector2i(randi_range(6,7),0))
+		else:
+			set_cell(0,Vector2i(x,y),3,Vector2i(randi_range(2,3),0))
+	set_cell(0,Vector2i(x,0),3,Vector2i(randi_range(4,5),0))
+	set_cell(0,Vector2i(x,-height),3,Vector2i(randi_range(4,5),0))
 
 func get_tile_health(local_position):
 	var tile = local_to_map(local_position)
@@ -41,8 +49,8 @@ func get_tile_health(local_position):
 func mine_tile(local_position):
 	var tile = local_to_map(local_position)
 	var tile_data = get_cell_tile_data(0,tile)
-	if tile_data and tile_data.get_custom_data("type") != -1:
-		set_cell(0,tile,0, Vector2i(0,0))
+	if tile_data and tile_data.get_custom_data("type") > 0:
+		set_cell(0,tile,3, Vector2i(randi_range(0,1),0))
 
 func _input(event):
 	if event is InputEventMouseButton and event.is_pressed():
